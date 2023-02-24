@@ -14,25 +14,31 @@ Per i numeri che sono sia multipli di 3 che di 5 stampi
 //   :? SE è sia multiplo di 3 che di 5
 //      ° stampa in console "FizzBuzz"
 
+// Prendo il container
 let containerEl = document.querySelector(".container");
 
 for(let i = 1; i < 101; i++){
 
-    let newEl = document.createElement("div");
-    newEl.classList.add("card")
-    newEl.innerHTML = i
-    containerEl.append(newEl);
+    // Creo l'elemento div 
+    let cardEl = document.createElement("div");
+    // assegno all'elemento div la classe card
+    cardEl.classList.add("card")
+
+    //scrivo in pagina il valore
+    cardEl.innerHTML = i
+    // dichiaro l'elemento card figlio di container
+    containerEl.append(cardEl);
     
     if (( i % 3 == 0 ) && ( i % 5 == 0 )){
-        newEl.innerHTML = "FizzBuzz";
-        newEl.style.backgroundColor = "rgba(255, 0, 0, 0.6)";
+        cardEl.innerHTML = "FizzBuzz";
+        cardEl.style.backgroundColor = "rgba(255, 0, 0, 0.6)";
 
     } else if ( i % 3 == 0 ){
-        newEl.innerHTML = "Fizz";
-        newEl.style.backgroundColor = "rgba(2, 177, 2, 0.6)";
+        cardEl.innerHTML = "Fizz";
+        cardEl.style.backgroundColor = "rgba(2, 177, 2, 0.6)";
 
     } else if ( i % 5 == 0 ){
-        newEl.innerHTML = "Buzz";
-        newEl.style.backgroundColor = "rgba(235, 243, 15, 0.8)";
+        cardEl.innerHTML = "Buzz";
+        cardEl.style.backgroundColor = "rgba(235, 243, 15, 0.8)";
     }
 }
