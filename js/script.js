@@ -16,19 +16,23 @@ Per i numeri che sono sia multipli di 3 che di 5 stampi
 
 let containerEl = document.querySelector(".container");
 
-for(let i = 1; i < 100; i++){
+for(let i = 1; i < 101; i++){
 
     let newEl = document.createElement("div");
+    newEl.classList.add("card")
     newEl.innerHTML = i
     containerEl.append(newEl);
     
     if (( i % 3 == 0 ) && ( i % 5 == 0 )){
-        newEl.innerHTML = "FizzBuzz"
+        newEl.innerHTML = "FizzBuzz";
+        newEl.style.backgroundColor = "rgba(255, 0, 0, 0.6)";
 
     } else if ( i % 3 == 0 ){
         newEl.innerHTML = "Fizz";
+        newEl.style.backgroundColor = "rgba(2, 177, 2, 0.6)";
 
     } else if ( i % 5 == 0 ){
         newEl.innerHTML = "Buzz";
+        newEl.style.backgroundColor = "rgba(235, 243, 15, 0.8)";
     }
 }
